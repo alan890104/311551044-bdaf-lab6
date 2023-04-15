@@ -28,7 +28,7 @@ contract Attack is Ownable {
         club = _club;
     }
 
-    // Attack the pool
+    // Attack the club with flashloaning from pool
     function attack() external onlyOwner {
         // Call the flashloan function of the pool contract with this contract's address and 1000001 bank tokens
         IPool(pool).flashloan(address(this), 1000001e18);
